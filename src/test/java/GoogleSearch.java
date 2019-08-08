@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -10,6 +11,11 @@ import java.util.concurrent.TimeUnit;
 public class GoogleSearch {
 
     WebDriver driver;
+
+    String testData1 = "portnov computer school";
+    String testData2 = "portnov computer school address";
+
+
 
     //TODO automate a different test case on Google search
     @Test
@@ -20,10 +26,32 @@ public class GoogleSearch {
     public void test0001() {
         openBrowser();
         navigateToMainPage();
-        typeQuory();
+        typeQuory(testData1);
         submitSearch();
         assertResultPage();
     }
+
+    @Test
+    public void test0002() {
+        openBrowser();
+        navigateToMainPage();
+        typeQuory(testData2);
+        submitSearch();
+        assertResultPage();
+    }
+
+    @Parameters({ "param-name1" })
+    @Test
+    public void test0003(String testDataFromParameter) {
+        openBrowser();
+        navigateToMainPage();
+        typeQuory(testDataFromParameter);
+        submitSearch();
+        assertResultPage();
+    }
+
+
+
 
     private void assertResultPage() {
        String textToExpect = "results";
@@ -40,9 +68,9 @@ public class GoogleSearch {
         element.submit();
     }
 
-    private void typeQuory() {
+    private void typeQuory(String queryText) {
        WebElement element = driver.findElement(By.cssSelector("#tsf > div:nth-child(2) > div > div.RNNXgb > div > div.a4bIc > input"));
-       element.sendKeys("portnov computer school");
+       element.sendKeys(queryText);
 
     }
 

@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1FromXml" verbose="1" >
+    <test name="GoogleSearchWithParam1" >
+        <classes>
+            <class name="GoogleSearch">
+                <parameter name="param-name1" value="testNG params usage"></parameter>
+                <methods>
+                    <include name="test0003"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="GoogleAndYahooSearchWithParam2" >
+        <classes>
+            <class name="GoogleSearch">
+                <parameter name="param-name1" value="testNG dataprovider usage"></parameter>
+                <methods>
+                    <include name="test0003"></include>
+                </methods>
+            </class>
+            <class name="YahooSearch">
+                <parameter name="param-name1" value="testNG dataprovider usage"></parameter>
+                <methods>
+                    <include name="test0003"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
