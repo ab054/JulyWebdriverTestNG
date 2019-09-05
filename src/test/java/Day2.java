@@ -50,16 +50,15 @@ public class Day2 {
 
     @Test
     public void testConstractors() {
-        Actor actor1 = new Actor("Actor1 Name", "Actor1 Lastname");
+       // vehicles.Car actor1 = new vehicles.Car("Actor1 Name", "Actor1 Lastname");
 
-        Actor actor2 = new Actor("Actor2 Name", "Actor2 Lastname");
+//
+      //  System.out.println("name field's value:" + actor1.name);
+       // System.out.println("surname field's value:" + actor1.surname);
 
-        System.out.println("name field's value:" + actor1.name);
-        System.out.println("surname field's value:" + actor1.surname);
 
-
-        System.out.println("name field's value:" + actor2.name);
-        System.out.println("surname field's value:" + actor2.surname);
+      //  System.out.println("name field's value:" + actor2.name);
+      //  System.out.println("surname field's value:" + actor2.surname);
     }
 
     //TODO: create an array of primitive data type objects

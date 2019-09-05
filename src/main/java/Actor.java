@@ -7,6 +7,8 @@ public class Actor {
     public Actor(String firstName, String lastName){
         name = firstName;
         surname = lastName;
+
+        System.out.println("Constuctor been called");
     }
 
 }
